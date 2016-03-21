@@ -1,0 +1,34 @@
+***************************************************************************************
+  ringBufher.c - C ring buffer (FIFO) implementation.
+ 
+  Written in 2016 by Di Li 
+ 					<li@umic.rwth-aachen.de>
+ 					https://de.linkedin.com/in/di-li-420a0152
+***************************************************************************************
+This project implements a ring Bufer, the available operations are 
+
+    Push                    
+    Pop                     // two versions, pop the oldest data, and a chunk of data
+    Peek
+    Current Size
+    Maximum Size
+    Empty
+    Full
+
+The codes have been tested on ubuntu 14.04.1 and with gcc 4.8.4
+
+****************************************************************************************
+How to use:
+	enter folder
+	type make to compile
+	type ./ringBuffer_test to run the unit test
+
+
+
+
+***************************************************************************************
+This implementation refers the following sources.
+**********************************************************************
+https://github.com/dhylands/TimerUART/blob/master/Timer-UART.cpp
+http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c
+http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c
