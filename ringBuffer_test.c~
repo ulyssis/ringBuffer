@@ -99,7 +99,7 @@ printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
     assert(circBufEmpty(cb) == 0);
 	circBufPop_one(cb);
 printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
-	circBufPop(cb, 17);
+	circBufPop(cb, 20);
     assert(circBufEmpty(cb) == 1);
     END_TEST(test_num);
 /*	printf("cb->tail= %d\n", cb->tail);*/

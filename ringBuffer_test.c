@@ -75,7 +75,7 @@ int main()
 	circBufPush(cb, data, initialSize); 
 
     START_NEW_TEST(test_num);
-printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
+/*printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));*/
     assert(circBufCurrentSize(cb) == initialSize);
 	x = circBufPeek(cb);
 /*	printf("circBufPeek is %4u\n", *x);*/
@@ -89,7 +89,7 @@ printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
 
 /*test circBufPop(circBuf_t *c, int num) and circBufPop_one(circBuf_t *c)*/
     START_NEW_TEST(test_num);
-printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
+/*printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));*/
 	circBufPop_one(cb);
 	circBufPop_one(cb);
 	circBufPop(cb, 3);
@@ -98,7 +98,7 @@ printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
 	assert(circBufCurrentSize(cb));
     assert(circBufEmpty(cb) == 0);
 	circBufPop_one(cb);
-printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
+/*printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));*/
 	circBufPop(cb, 20);
     assert(circBufEmpty(cb) == 1);
     END_TEST(test_num);
@@ -116,7 +116,7 @@ printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
 	circBufPush(cb, data, initialSize*2);
 	circBufPop_one(cb);
 	assert(circBufFull(cb) == 0);
-printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));
+/*printf("circBufCurrentSize(cb) is %d\n", circBufCurrentSize(cb));*/
     assert(circBufCurrentSize(cb) == initialSize*2-1);
 	circBufPop(cb, 3);
 	circBufPop(cb, 5);

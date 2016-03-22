@@ -82,8 +82,8 @@ int circBufPush(circBuf_t *c, uint32_t *data, int num)
 		}else{
 			idx = i+ c->head+1;
 		}
-		printf("idx = %d\n", idx); 
-	printf("c->maxLen = %d\n", c->maxLen);  
+/*		printf("idx = %d\n", idx); */
+/*	printf("c->maxLen = %d\n", c->maxLen);  */
 		if(idx  == c->tail){
 		 	printf("buffer is full!!\n");  
 			c->head = idx -1;
@@ -93,17 +93,17 @@ int circBufPush(circBuf_t *c, uint32_t *data, int num)
 		temp = c->buffer;
 		temp += idx;
 		*temp = *(data+i);
-		printf("circBufPush, *(temp)[%d] is %4u\n", idx, *temp);
+/*		printf("circBufPush, *(temp)[%d] is %4u\n", idx, *temp);*/
 		}
 
 // Update the current index of our ring buffer.
 	c->head += num;
-	printf("c->head is %d\n", c->head);
+/*	printf("c->head is %d\n", c->head);*/
 /*    c->head &= c->maxLen -1;*/
 	if(c->head > c->maxLen -1){
 		c->head = c->head -(c->maxLen - 1);
 	}
-	printf("c->head is %d\n", c->head);
+/*	printf("c->head is %d\n", c->head);*/
     return 1;
 }
  
@@ -123,7 +123,7 @@ int circBufPop(circBuf_t *c, int num)
     int currentSize = circBufCurrentSize(c);
 
 	if(num >= currentSize){
-		printf("The buffer is clear!\n");
+		printf("The buffer is cleared!\n");
 		c->head =0;
 		c->tail =0;
 	}

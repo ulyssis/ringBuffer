@@ -82,8 +82,8 @@ int circBufPush(circBuf_t *c, uint32_t *data, int num)
 		}else{
 			idx = i+ c->head+1;
 		}
-		printf("idx = %d\n", idx); 
-	printf("c->maxLen = %d\n", c->maxLen);  
+/*		printf("idx = %d\n", idx); */
+/*	printf("c->maxLen = %d\n", c->maxLen);  */
 		if(idx  == c->tail){
 		 	printf("buffer is full!!\n");  
 			c->head = idx -1;
@@ -93,17 +93,17 @@ int circBufPush(circBuf_t *c, uint32_t *data, int num)
 		temp = c->buffer;
 		temp += idx;
 		*temp = *(data+i);
-		printf("circBufPush, *(temp)[%d] is %4u\n", idx, *temp);
+/*		printf("circBufPush, *(temp)[%d] is %4u\n", idx, *temp);*/
 		}
 
 // Update the current index of our ring buffer.
 	c->head += num;
-	printf("c->head is %d\n", c->head);
+/*	printf("c->head is %d\n", c->head);*/
 /*    c->head &= c->maxLen -1;*/
 	if(c->head > c->maxLen -1){
 		c->head = c->head -(c->maxLen - 1);
 	}
-	printf("c->head is %d\n", c->head);
+/*	printf("c->head is %d\n", c->head);*/
     return 1;
 }
  
@@ -131,13 +131,23 @@ int circBufPop(circBuf_t *c, int num)
 		int i, idx;
 		uint32_t *temp;
 		for(i=0; i<num; i++){
-			idx = (i+ c->tail) & (c->maxLen -1);
+/*			idx = (i+ c->tail) & (c->maxLen -1);*/
+			if(i+ c->tail > c->maxLen -1){
+				idx = i+ c->tail - (c->maxLen -1);
+				}else{
+					idx = i+ c->tail;				
+				}
 			temp = c->buffer;
 			temp += idx;
 /*			printf("the value to be popped up is %4u\n", *temp);*/
 			*temp = 0;
 			}
-		c->tail = (c->tail + num) & (c->maxLen -1);
+		if(c->tail + num > c->maxLen -1){
+			c->tail = c->tail + num - (c->maxLen -1);			
+			}else{
+			c->tail = c->tail + num;
+}
+
 /*		printf("c->tail is %4u\n", c->tail);*/
 		}
     return 0;
