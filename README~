@@ -19,16 +19,18 @@ The codes have been tested on ubuntu 14.04.1 and with gcc 4.8.4
 
 ****************************************************************************************
 How to use:
-	1. enter folder
-	2. type make to compile
-	3. type ./ringBuffer_test to run the unit test
-		users need to define two parameters in ringBuffer_test.c
+	enter folder
+	type make to compile
+	type ./ringBuffer_test to run the unit test
 
-		#define kNumPointsInMyBuffer 100  //maxLen
-		#define initialSize 20			// size
-	
-		The unit test may file when you change these inputs, the printf lines can help you to know 
-		which part goes wrong.
+
+users need to define two parameters in ringBuffer_test.c
+
+#define kNumPointsInMyBuffer 100  //maxLen
+#define initialSize 20			// size
+
+The unit test may file when you change these inputs, the printf lines can help you to know 
+which part goes wrong.
 
 
 
