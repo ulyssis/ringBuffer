@@ -14,7 +14,7 @@ This project implements a ring Bufer, the available operations are
     Maximum Size
     Empty
     Full
-
+This ring buffer spares one element to distinguish the head and tail.
 The codes have been tested on ubuntu 14.04.1 and with gcc 4.8.4
 
 ****************************************************************************************
@@ -27,7 +27,7 @@ How to use:
 		#define kNumPointsInMyBuffer 100  //maxLen
 		#define initialSize 20			// size
 	
-		The unit test may file when you change these inputs, the printf lines can help you to know 
+		The unit test may fail when these inputs are changed, the printf lines can help you to know 
 		which part goes wrong.
 
 
