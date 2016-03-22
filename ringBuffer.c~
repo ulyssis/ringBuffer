@@ -131,23 +131,13 @@ int circBufPop(circBuf_t *c, int num)
 		int i, idx;
 		uint32_t *temp;
 		for(i=0; i<num; i++){
-/*			idx = (i+ c->tail) & (c->maxLen -1);*/
-			if(i+ c->tail > c->maxLen -1){
-				idx = i+ c->tail - (c->maxLen -1);
-				}else{
-					idx = i+ c->tail;				
-				}
+			idx = (i+ c->tail) & (c->maxLen -1);
 			temp = c->buffer;
 			temp += idx;
 /*			printf("the value to be popped up is %4u\n", *temp);*/
 			*temp = 0;
 			}
-		if(c->tail + num > c->maxLen -1){
-			c->tail = c->tail + num - (c->maxLen -1);			
-			}else{
-			c->tail = c->tail + num;
-}
-
+		c->tail = (c->tail + num) & (c->maxLen -1);
 /*		printf("c->tail is %4u\n", c->tail);*/
 		}
     return 0;
