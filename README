@@ -27,8 +27,12 @@ How to use:
 		#define kNumPointsInMyBuffer 100  //maxLen
 		#define initialSize 20			// size
 	
-		The unit test may file when you change these inputs, the printf lines can help you to know 
-		which part goes wrong.
+
+In ringBuffer_test.c, these are intended for use with the test harness, and should probably
+be removed from production code, once you're confident that ringbuf works as intended.
+
+The unit test may fail when you change these inputs, the printf lines can help you to know 
+which part goes wrong.
 
 
 
@@ -36,5 +40,4 @@ How to use:
 This implementation refers the following sources.
 **********************************************************************
 https://github.com/dhylands/TimerUART/blob/master/Timer-UART.cpp
-http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c
 http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c

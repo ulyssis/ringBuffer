@@ -19,17 +19,19 @@ The codes have been tested on ubuntu 14.04.1 and with gcc 4.8.4
 
 ****************************************************************************************
 How to use:
-	enter folder
-	type make to compile
-	type ./ringBuffer_test to run the unit test
+	1. enter folder
+	2. type make to compile
+	3. type ./ringBuffer_test to run the unit test
+		users need to define two parameters in ringBuffer_test.c
 
+		#define kNumPointsInMyBuffer 100  //maxLen
+		#define initialSize 20			// size
+	
 
-users need to define two parameters in ringBuffer_test.c
+In ringBuffer_test.c, these are intended for use with the test harness, and should probably
+be removed from production code, once you're confident that ringbuf works as intended.
 
-#define kNumPointsInMyBuffer 100  //maxLen
-#define initialSize 20			// size
-
-The unit test may file when you change these inputs, the printf lines can help you to know 
+The unit test may fail when you change these inputs, the printf lines can help you to know 
 which part goes wrong.
 
 
@@ -38,5 +40,4 @@ which part goes wrong.
 This implementation refers the following sources.
 **********************************************************************
 https://github.com/dhylands/TimerUART/blob/master/Timer-UART.cpp
-http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c
 http://stackoverflow.com/questions/827691/how-do-you-implement-a-circular-buffer-in-c

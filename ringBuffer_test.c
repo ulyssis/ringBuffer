@@ -19,7 +19,7 @@
 
 /* Default size for tests. */
 #define kNumPointsInMyBuffer 100  //maxLen
-#define initialSize 20			// size
+#define initialSize 200		// size
 
 int main()
 {
@@ -40,7 +40,7 @@ int main()
 	uint32_t data[1024];	
 	memcpy(data, src, 1024);
 
-	printf("\nThe size of the uint32_t data array is %lu\n", sizeof(data));
+/*	printf("\nThe size of the uint32_t data array is %lu\n", sizeof(data));*/
 	int sz = sizeof(*data);
 
 	circBuf_t *cb;
