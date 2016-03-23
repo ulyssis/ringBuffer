@@ -14,7 +14,7 @@ This project implements a ring Bufer, the available operations are
     Maximum Size
     Empty
     Full
-
+This ring buffer spares one element to distinguish the head and tail.
 The codes have been tested on ubuntu 14.04.1 and with gcc 4.8.4
 
 ****************************************************************************************
@@ -28,11 +28,13 @@ How to use:
 		#define initialSize 20			// size
 	
 
+
 In ringBuffer_test.c, these are intended for use with the test harness, and should probably
 be removed from production code, once you're confident that ringbuf works as intended.
 
 The unit test may fail when you change these inputs, the printf lines can help you to know 
 which part goes wrong.
+
 
 
 
