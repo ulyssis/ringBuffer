@@ -1,2 +1,0 @@
-# ringBuffer
-ring buffer (FIFO)
